@@ -10,14 +10,51 @@
 	h1 {
 		font-size: 1.6em;
 	}
+
 	.content {
-		font-size: 18px;
+		font-size: 14px;
 	}
+	.is-hidden {
+		display: none !important;
+	}
+	.toggles {
+		background-color: #eee;
+		margin-top:20px;
+		padding: 20px;
+	}
+	.inline-block {
+		display: inline-block;
+	}
+	.on {
+		background-color: darkgreen;
+		color: #fff;
+		padding: 5px;
+	}
+	.off {
+		 background-color: darkred;
+		 color: #fff;
+		 padding: 5px;
+	 }
+
 </style>
 
 <div id="mainPopup" class="content">
 	<h1>Current Features</h1>
 	<div id="features"></div>
+	<hr>
+	Front end toggles:
+	<div class="toggles">
+		<div class="inline-block">Risk Rating is
+			<div id="riskRatingOn" class="inline-block on">ON</div>
+			<div id="riskRatingOff" class="inline-block off">OFF</div>
+		</div>
+		<div class="inline-block">
+			<button type="button" id="set">turn on</button>
+			<button type="button" id="remove">Turn off</button>
+		</div>
+		<div id="refresh" class="is-hidden">Please refresh the page</div>
+	</div>
+
 </div>
 
 
