@@ -10,6 +10,8 @@ document.getElementById('riskRatingOff').onclick = function(){
 
 document.getElementById('riskRatingOn').onclick = function(){
   chrome.cookies.set({ url: "https://dev.austhealth.com", name: "", value: ""});
+  chrome.cookies.remove({url: "https://dev.austhealth.com", name: "RiskRating" });
+
   document.getElementById('refresh').className = "";
 };
 
