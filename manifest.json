@@ -1,6 +1,6 @@
 {
   "name": "Feature indicator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "manifest_version": 2,
   "description": "See the features enabled on an nib website",
   "icons": {
