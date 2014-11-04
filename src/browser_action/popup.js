@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById('set').onclick = function(){
-  chrome.cookies.set({ url: "https://dev.austhealth.com", name: "", value: "RiskRating"});
+  chrome.cookies.set({ url: "https://dev.austhealth.com", name: "RiskRating", value: ""});
   document.getElementById('refresh').className = "";
 };
 
