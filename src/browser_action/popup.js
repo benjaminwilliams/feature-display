@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
   hello();
 });
 
-document.getElementById('set').onclick = function(){
-  chrome.cookies.set({ url: "https://dev.austhealth.com", name: "RiskRating", value: ""});
+document.getElementById('riskRatingOff').onclick = function(){
+  chrome.cookies.set({ url: "https://dev.austhealth.com", name: "", value: "RiskRating"});
   document.getElementById('refresh').className = "";
 };
 
-document.getElementById('remove').onclick = function(){
+document.getElementById('riskRatingOn').onclick = function(){
   chrome.cookies.set({ url: "https://dev.austhealth.com", name: "", value: ""});
   document.getElementById('refresh').className = "";
 };
@@ -26,13 +26,11 @@ function hello() {
       document.getElementById("features").textContent = listFeatures;
 
       if(listFeatures === " ft-risk-rating"){
-        document.getElementById('set').className += " is-hidden";
         document.getElementById('riskRatingOff').className += " is-hidden";
 
 
       }
       else {
-        document.getElementById('remove').className += " is-hidden";
         document.getElementById('riskRatingOn').className += " is-hidden";
       }
 

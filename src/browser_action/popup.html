@@ -14,16 +14,22 @@
 		<div id="features"></div>
 	</div>
 	<div class="switches">
-		<div class="inline-block">Risk Rating is
-			<div id="riskRatingOn" class="inline-block on">ON</div>
-			<div id="riskRatingOff" class="inline-block off">OFF</div>
-		</div>
-		<div class="inline-block">
-			<button type="button" id="set">turn on</button>
-			<button type="button" id="remove">Turn off</button>
-		</div>
-		<div id="refresh" class="is-hidden">Please refresh the page</div>
+		<h1>Toggle Features</h1>
 	</div>
+	<div class="content pt-10">
+		<div><span class="label">Risk Rating</span>
+			<div class="pull-right">
+				<div class="inline-block switch" id="riskRatingOn">
+					<div  class="inline-block on switch__button"></div>
+				</div>
+				<div class="inline-block switch switch--off" id="riskRatingOff">
+					<div class="inline-block off switch__button"></div>
+				</div>
+			</div>
+		</div>
+		<div id="refresh" class="is-hidden">
+			<div class="refresh">Please refresh the page</div>
+		</div>
 	</div>
 </div>
 
