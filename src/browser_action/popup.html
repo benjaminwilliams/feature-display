@@ -1,49 +1,19 @@
 
 <!doctype html>
-<style type="text/css">
-	#mainPopup {
-		padding: 10px;
-		height: 200px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 1.6em;
-	}
+<link href="popup.css" rel="stylesheet"/>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
 
-	.content {
-		font-size: 14px;
-	}
-	.is-hidden {
-		display: none !important;
-	}
-	.toggles {
-		background-color: #eee;
-		margin-top:20px;
-		padding: 20px;
-	}
-	.inline-block {
-		display: inline-block;
-	}
-	.on {
-		background-color: darkgreen;
-		color: #fff;
-		padding: 5px;
-	}
-	.off {
-		 background-color: darkred;
-		 color: #fff;
-		 padding: 5px;
-	 }
 
-</style>
+<div id="mainPopup">
+	<div class="header">
+		<h1>IMAN Feature indicator</h1>
 
-<div id="mainPopup" class="content">
-	<h1>Current Features</h1>
-	<div id="features"></div>
-	<hr>
-	Front end toggles:
-	<div class="toggles">
+	</div>
+	<div class="content">
+		<h2>Toggles found:</h2>
+		<div id="features"></div>
+	</div>
+	<div class="switches">
 		<div class="inline-block">Risk Rating is
 			<div id="riskRatingOn" class="inline-block on">ON</div>
 			<div id="riskRatingOff" class="inline-block off">OFF</div>
@@ -54,7 +24,7 @@
 		</div>
 		<div id="refresh" class="is-hidden">Please refresh the page</div>
 	</div>
-
+	</div>
 </div>
 
 

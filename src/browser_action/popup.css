@@ -1,0 +1,58 @@
+#mainPopup {
+  height: 200px;
+  width: 400px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+h2 {
+  font-weight: 500;
+}
+.content {
+  padding: 20px;
+  font-size: 14px;
+}
+.is-hidden {
+  display: none !important;
+}
+.toggles {
+  background-color: #eee;
+  margin-top:20px;
+  padding: 20px;
+}
+.inline-block {
+  display: inline-block;
+}
+.on {
+  background-color: darkgreen;
+  color: #fff;
+  padding: 5px;
+}
+.off {
+  background-color: darkred;
+  color: #fff;
+  padding: 5px;
+}
+
+.header {
+  background-color: #0088CC;
+  color: #fff;
+  font-weight: 100;
+  padding: 20px;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.switches {
+  background-color: #585599;
+  color: #fff;
+  font-weight: 100;
+  padding: 20px;
+}
