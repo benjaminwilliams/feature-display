@@ -4,13 +4,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById('riskRatingOff').onclick = function(){
-  chrome.cookies.set({ url: "https://dev.austhealth.com", name: "", value: "RiskRating"});
+
+  chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    chrome.cookies.set({ url: url, name: "RiskRating", value: ""});
+  });
+
   document.getElementById('refresh').className = "";
 };
 
 document.getElementById('riskRatingOn').onclick = function(){
-  chrome.cookies.set({ url: "https://dev.austhealth.com", name: "", value: ""});
-  chrome.cookies.remove({url: "https://dev.austhealth.com", name: "RiskRating" });
+
+  chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    chrome.cookies.remove({url: url, name: "RiskRating" });
+  });
 
   document.getElementById('refresh').className = "";
 };
