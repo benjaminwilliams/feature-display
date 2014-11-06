@@ -1,17 +1,16 @@
 chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
+		if (document.readyState === "complete") {
+			clearInterval(readyStateCheckInterval);
 
-		// ----------------------------------------------------------
-		// This part of the script triggers when page is done loading
-		console.log("Hello. This message was sent from scripts/inject.js");
-		// ----------------------------------------------------------
-
-	}
+			// ----------------------------------------------------------
+			// This part of the script triggers when page is done loading
+			console.log("Hello. This message was sent from scripts/inject.js");
+			// ----------------------------------------------------------
+			listFeatures(prefix);
+		}
 	}, 10);
 });
-
 
 function listFeatures(prefix) {
 
@@ -25,6 +24,10 @@ function listFeatures(prefix) {
 				classList += (" " + element.className.split(' ')[i]);
 			}
 		}
+
+		if(classList === ""){
+			classList = "(all toggles off)";
+		}
 		return classList;
 	}
 
@@ -34,8 +37,11 @@ function listFeatures(prefix) {
 
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
-		if (request.greeting == "getFeaturesFromInject")
+		if (request.greeting == "getFeaturesFromInject"){
 			sendResponse({
 				msg: listFeatures("ft-")
 			});
+		}
+
+
 	});

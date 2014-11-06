@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-  hello();
+  init();
 });
 
 document.getElementById('riskRatingOff').onclick = function(){
@@ -23,9 +23,19 @@ document.getElementById('riskRatingOn').onclick = function(){
   document.getElementById('refresh').className = "";
 };
 
-function hello() {
+function init() {
 
   var listFeatures = "";
+
+  chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    if (url.indexOf("austhealth") > -1){
+      document.getElementById('invalidPage').className = "is-hidden";
+      document.getElementById('validPage').className = "";
+    }
+
+  });
+
 
   chrome.runtime.sendMessage({
       greeting: "getFeatures"
@@ -45,7 +55,9 @@ function hello() {
       }
 
 
+    });
 
-  });
+
+
 
 }

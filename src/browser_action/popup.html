@@ -3,32 +3,42 @@
 <link href="popup.css" rel="stylesheet"/>
 <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
 
-
 <div id="mainPopup">
-	<div class="header">
-		<h1>IMAN Feature indicator</h1>
+	<div id="invalidPage" class="">
+		<div class="header">
+			<h1>Not an IMAN site</h1>
 
+		</div>
+		<div class="content pt-10">
+			<p>This extension only works in austhealth.com environments</p>
+		</div>
 	</div>
-	<div class="content">
-		<h2>Toggles found:</h2>
-		<div id="features"></div>
-	</div>
-	<div class="switches">
-		<h1>Toggle Features</h1>
-	</div>
-	<div class="content pt-10">
-		<div><span class="label">Risk Rating</span>
-			<div class="pull-right">
-				<div class="inline-block switch" id="riskRatingOn">
-					<div  class="inline-block on switch__button"></div>
-				</div>
-				<div class="inline-block switch switch--off" id="riskRatingOff">
-					<div class="inline-block off switch__button"></div>
+	<div id="validPage" class="is-hidden">
+		<div class="header">
+			<h1>IMAN Feature indicator</h1>
+
+		</div>
+		<div class="content">
+			<h2>Toggles found:</h2>
+			<div id="features"></div>
+		</div>
+		<div class="switches">
+			<h1>Toggle Features</h1>
+		</div>
+		<div class="content pt-10">
+			<div><span class="label">Risk Rating</span>
+				<div class="pull-right">
+					<div class="inline-block switch" id="riskRatingOn">
+						<div  class="inline-block on switch__button"></div>
+					</div>
+					<div class="inline-block switch switch--off" id="riskRatingOff">
+						<div class="inline-block off switch__button"></div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id="refresh" class="is-hidden">
-			<div class="refresh">Please refresh the page</div>
+			<div id="refresh" class="is-hidden">
+				<div class="refresh">Please refresh the page</div>
+			</div>
 		</div>
 	</div>
 </div>
