@@ -1,6 +1,6 @@
 {
   "name": "Feature indicator",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "manifest_version": 2,
   "description": "See the features enabled on an nib website",
   "icons": {
@@ -8,6 +8,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "options_page": "src/options/options.html",
   "default_locale": "en",
   "background": {
     "scripts": [
@@ -23,6 +24,7 @@
   "permissions": [
     "cookies",
     "tabs",
+    "storage",
     "https://*.austhealth.com/*"
   ],
   "content_scripts": [

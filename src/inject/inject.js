@@ -3,11 +3,8 @@ chrome.extension.sendMessage({}, function(response) {
 		if (document.readyState === "complete") {
 			clearInterval(readyStateCheckInterval);
 
-			// ----------------------------------------------------------
-			// This part of the script triggers when page is done loading
-			console.log("Hello. This message was sent from scripts/inject.js");
-			// ----------------------------------------------------------
 			listFeatures(prefix);
+
 		}
 	}, 10);
 });

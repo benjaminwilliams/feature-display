@@ -7,7 +7,7 @@ document.getElementById('riskRatingOff').onclick = function(){
 
   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url;
-    chrome.cookies.set({ url: url, name: "RiskRating", value: ""});
+    chrome.cookies.set({ url: url, name: loadToggle(), value: ""});
   });
 
   document.getElementById('refresh').className = "";
@@ -17,15 +17,34 @@ document.getElementById('riskRatingOn').onclick = function(){
 
   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url;
-    chrome.cookies.remove({url: url, name: "RiskRating" });
+    chrome.cookies.remove({url: url, name: loadToggle() });
   });
 
   document.getElementById('refresh').className = "";
 };
 
+function loadToggle() {
+  //set default if you havent set a toggle
+  var toggleText;
+
+  console.log(localStorage.toggles);
+
+  if (localStorage.toggles == undefined){
+    toggleText = "RiskRating";
+  }
+  else {
+    toggleText = localStorage.toggles;
+  }
+
+  return toggleText;
+}
+
+
 function init() {
 
   var listFeatures = "";
+
+  document.getElementById('currentToggles').innerText = loadToggle();
 
   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url;
