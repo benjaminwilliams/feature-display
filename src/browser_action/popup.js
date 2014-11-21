@@ -43,15 +43,19 @@ function loadToggle() {
 function init() {
 
   var listFeatures = "";
+  var allowedsites = ["austhealth", "nib"];
 
   document.getElementById('currentToggles').innerText = loadToggle();
 
   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url;
-    if (url.indexOf("austhealth") > -1){
-      document.getElementById('invalidPage').className = "is-hidden";
-      document.getElementById('validPage').className = "";
+    for (var i = 0; i < allowedsites.length; i++ ) {
+      if (url.indexOf(allowedsites[i]) > -1){
+        document.getElementById('invalidPage').className = "is-hidden";
+        document.getElementById('validPage').className = "";
+      }
     }
+
 
   });
 
