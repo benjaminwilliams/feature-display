@@ -25,7 +25,9 @@
     "cookies",
     "tabs",
     "storage",
-    "https://*.austhealth.com/*"
+    "https://*.austhealth.com/*",
+    "https://*.nib.com.au/*",
+    "http://*.nib.com.au/*"
   ],
   "content_scripts": [
     {
